@@ -1,7 +1,7 @@
 {
-  "name": "wr",
+  "name": "cwr",
   "version": "1.0.0",
-  "description": "weekly reports周报生成工具（git）",
+  "description": "create weekly reports周报生成工具（git）",
   "main": "index.js",
   "bin": {
     "wr": "index.js"
