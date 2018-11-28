@@ -1,0 +1,31 @@
+{
+  "name": "logstool",
+  "version": "1.0.0",
+  "description": "周报生成工具（git）",
+  "main": "index.js",
+  "bin": {
+    "wr": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1091214370/logsTool.git"
+  },
+  "author": "1091214370@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1091214370/logsTool/issues"
+  },
+  "homepage": "https://github.com/1091214370/logsTool#readme",
+  "dependencies": {
+    "colors": "^1.3.2",
+    "moment": "^2.22.2",
+    "shelljs": "^0.8.3"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "git"
+  ]
+}
