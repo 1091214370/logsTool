@@ -1,7 +1,7 @@
 {
-  "name": "logstool",
+  "name": "wr",
   "version": "1.0.0",
-  "description": "周报生成工具（git）",
+  "description": "weekly reports周报生成工具（git）",
   "main": "index.js",
   "bin": {
     "wr": "index.js"
