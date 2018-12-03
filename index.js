@@ -1,8 +1,17 @@
 #!/usr/bin/env node
-const shell = require('shelljs');
 const color = require('colors');
 const { exec } = require('child_process');
-const moment = require('moment');
+// const moment = require('moment');
+var argv = require('yargs')
+  .option('C', {
+    alias : 'cmt',
+    demand: false,
+    default: 'tom',
+    describe: 'git [add -> commit -> pull -> push]',
+    type: 'string'
+  })
+  .argv;
+
 
 let author, logs;
 // 获取author
