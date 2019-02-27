@@ -19,8 +19,7 @@ function logs (days) {
       return;
     };
     if (stderr) {
-      console.log(color.red('stderr:', stderr));
-      return;
+      console.log(color.yellow('stderr:', stderr));
     }
     author = stdout;
     getAuthor.kill();
@@ -31,8 +30,7 @@ function logs (days) {
         return;
       };
       if (stderr) {
-        console.log(color.red('stderr:', stderr));
-        return;
+        console.log(color.yellow('stderr:', stderr));
       }
       logs = stdout;
       console.log(logs);
@@ -57,8 +55,7 @@ function commit(msg) {
       return;
     }
     if (stderr) {
-      console.log(color.red('stderr:', stderr));
-      return;
+      console.log(color.yellow('stderr:', stderr));
     }
     console.log(stdout);
     add.kill();
@@ -69,8 +66,7 @@ function commit(msg) {
         return;
       }
       if (stderr) {
-        console.log(color.red('stderr:', stderr));
-        return;
+        console.log(color.yellow('stderr:', stderr));
       }
       console.log(stdout);
       commitFun.kill();
@@ -81,8 +77,7 @@ function commit(msg) {
           return;
         }
         if (stderr) {
-          console.log(color.red('stderr:', stderr));
-          return;
+          console.log(color.yellow('stderr:', stderr));
         }
         console.log(stdout);
         pull.kill();
@@ -93,7 +88,7 @@ function commit(msg) {
             return;
           }
           if (stderr) {
-            console.log(color.green('stderr:', stderr));
+            console.log(color.yellow('stderr:', stderr));
           }
           console.log(stdout);
           push.kill();

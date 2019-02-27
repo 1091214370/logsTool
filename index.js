@@ -3,7 +3,7 @@ const program = require('commander');
 const { logs, commit } = require('./src/git');
 
 program
-  .version('1.0.2',  '-v, --version')
+  .version('1.0.3',  '-v, --version')
   .option('-d, --days', '查看[days]天之内的提交记录')
   .option('-c, --commit', '填写git commit -m 的内容')
   .parse(process.argv);
