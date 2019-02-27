@@ -93,7 +93,7 @@ function commit(msg) {
             return;
           }
           if (stderr) {
-            console.log(color.red('stderr:', stderr));
+            console.log(color.green('stderr:', stderr));
             // return;
           }
           console.log(stdout);
