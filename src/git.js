@@ -15,11 +15,11 @@ function logs (days) {
   // 获取author
   const getAuthor = exec('git config user.name', (err, stdout, stderr) => {
     if (err) {
-      console.log(color.red(err));
+      console.log(color.red('Err:', err));
       return;
     };
     if (stderr) {
-      console.log(color.red(stderr));
+      console.log(color.red('stderr:', stderr));
       return;
     }
     author = stdout;
@@ -27,11 +27,11 @@ function logs (days) {
     // 获取4天之内[author]提交的所有记录
     const getLogs = exec(`git log --pretty=format:"%h - %an, %cd : %s" --since="${days || 4} day ago" --author="${author}"`, (err, stdout, stderr) => {
       if (err) {
-        console.log(color.red(err));
+        console.log(color.red('Err:', err));
         return;
       };
       if (stderr) {
-        console.log(color.red(stderr));
+        console.log(color.red('stderr:', stderr));
         return;
       }
       logs = stdout;
@@ -47,17 +47,17 @@ function logs (days) {
  */
 function commit(msg) {
   if (!msg) {
-    console.log(color.red('请输入此次提交记录！'));
+    console.log(color.red('LocalErr: 请输入此次提交记录！'));
     return;
   }
   const add = exec('git add *', (err, stdout, stderr) => {
     console.log('git add * ...');
     if (err) {
-      console.log(color.red(err));
+      console.log(color.red('Err:', err));
       return;
     }
     if (stderr) {
-      console.log(color.red(stderr));
+      console.log(color.red('stderr:', stderr));
       return;
     }
     console.log(stdout);
@@ -65,11 +65,11 @@ function commit(msg) {
     const commitFun = exec(`git commit -m ${msg}`, (err, stdout, stderr) => {
       console.log(`git commit -m ${msg} ...`);
       if (err) {
-        console.log(color.red(err));
+        console.log(color.red('Err:', err));
         return;
       }
       if (stderr) {
-        console.log(color.red(stderr));
+        console.log(color.red('stderr:', stderr));
         return;
       }
       console.log(stdout);
@@ -77,11 +77,11 @@ function commit(msg) {
       const pull = exec('git pull', (err, stdout, stderr) => {
         console.log('git pull ...');
         if (err) {
-          console.log(color.red(err));
+          console.log(color.red('Err:', err));
           return;
         }
         if (stderr) {
-          console.log(color.red(stderr));
+          console.log(color.red('stderr:', stderr));
           return;
         }
         console.log(stdout);
@@ -89,11 +89,11 @@ function commit(msg) {
         const push = exec('git push', (err, stdout, stderr) => {
           console.log('git push ...');
           if (err) {
-            console.log(color.red(err));
+            console.log(color.red('Err:', err));
             return;
           }
           if (stderr) {
-            console.log(color.red(stderr));
+            console.log(color.red('stderr:', stderr));
             return;
           }
           console.log(stdout);
