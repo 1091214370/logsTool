@@ -51,6 +51,7 @@ function commit(msg) {
     return;
   }
   const add = exec('git add *', (err, stdout, stderr) => {
+    console.log('git add * ...');
     if (err) {
       console.log(color.red(err));
       return;
@@ -62,6 +63,7 @@ function commit(msg) {
     console.log(stdout);
     add.kill();
     const commitFun = exec(`git commit -m ${msg}`, (err, stdout, stderr) => {
+      console.log(`git commit -m ${msg} ...`);
       if (err) {
         console.log(color.red(err));
         return;
@@ -73,6 +75,7 @@ function commit(msg) {
       console.log(stdout);
       commitFun.kill();
       const pull = exec('git pull', (err, stdout, stderr) => {
+        console.log('git pull ...');
         if (err) {
           console.log(color.red(err));
           return;
@@ -84,6 +87,7 @@ function commit(msg) {
         console.log(stdout);
         pull.kill();
         const push = exec('git push', (err, stdout, stderr) => {
+          console.log('git push ...');
           if (err) {
             console.log(color.red(err));
             return;
