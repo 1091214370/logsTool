@@ -94,7 +94,7 @@ function commit(msg) {
           }
           if (stderr) {
             console.log(color.red('stderr:', stderr));
-            return;
+            // return;
           }
           console.log(stdout);
           push.kill();
