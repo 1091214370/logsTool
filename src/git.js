@@ -46,6 +46,10 @@ function logs (days) {
  * @param {string} msg git commit -m 的填写内容
  */
 function commit(msg) {
+  if (!msg) {
+    console.log(color.red('请输入此次提交记录！'));
+    return;
+  }
   const add = exec('git add *', (err, stdout, stderr) => {
     if (err) {
       console.log(color.red(err));
@@ -57,7 +61,7 @@ function commit(msg) {
     }
     console.log(stdout);
     add.kill();
-    const commit = exec(`git commit -m ${msg}`, (err, stdout, stderr) => {
+    const commitFun = exec(`git commit -m ${msg}`, (err, stdout, stderr) => {
       if (err) {
         console.log(color.red(err));
         return;
@@ -67,7 +71,31 @@ function commit(msg) {
         return;
       }
       console.log(stdout);
-      commit.kill();
+      commitFun.kill();
+      const pull = exec('git pull', (err, stdout, stderr) => {
+        if (err) {
+          console.log(color.red(err));
+          return;
+        }
+        if (stderr) {
+          console.log(color.red(stderr));
+          return;
+        }
+        console.log(stdout);
+        pull.kill();
+        const push = exec('git push', (err, stdout, stderr) => {
+          if (err) {
+            console.log(color.red(err));
+            return;
+          }
+          if (stderr) {
+            console.log(color.red(stderr));
+            return;
+          }
+          console.log(stdout);
+          push.kill();
+        });
+      });
     });
   });
   
