@@ -21,5 +21,5 @@ npm i cwr -g
 ```
 
 #### 快捷提交代码到远程仓库
-执行`cwr -c [message]`或`cwr -commit [message]`,例如`cwr -m 提交代码内容`,即可完成`git add * => git commit => git pull => git push`。message为必填项。
+执行`cwr -c [message]`或`cwr --commit [message]`,例如`cwr -m 提交代码内容`,即可完成`git add * => git commit => git pull => git push`。message为必填项。
 
