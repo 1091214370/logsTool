@@ -8,7 +8,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "git": "git add * && git commit -m 优化脚本 && git pull && git push",
     "patch": "npm version patch && npm publish",
     "minor ": "npm version minor && npm publish",
     "major ": "npm version major && npm publish"
