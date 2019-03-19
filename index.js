@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 const program = require('commander');
 const { logs, commit } = require('./src/git');
+const package = require('./package.json');
 
 program
-  .version('1.0.3',  '-v, --version')
+  .version(package.version,  '-v, --version')
   .option('-d, --days', '查看[days]天之内的提交记录')
   .option('-c, --commit', '填写git commit -m 的内容')
   .parse(process.argv);
