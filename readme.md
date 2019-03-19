@@ -1,6 +1,8 @@
 ## weekly reports周报生成工具（git）git便捷工具
 
 ### 更新记录
+#### v1.0.4
+1. git便捷提交不在向线上提交代码
 #### v1.0.3
 1. 优化git便捷提交内报错规则
 #### v1.0.2
@@ -21,5 +23,5 @@ npm i cwr -g
 ```
 
 #### 快捷提交代码到远程仓库
-执行`cwr -c [message]`或`cwr --commit [message]`,例如`cwr -m 提交代码内容`,即可完成`git add * => git commit => git pull => git push`。message为必填项。
+执行`cwr -c [message]`或`cwr --commit [message]`,例如`cwr -m 提交代码内容`,即可完成`git add * => git commit => git pull`。message为必填项。
 

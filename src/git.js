@@ -81,18 +81,6 @@ function commit(msg) {
         }
         console.log(stdout);
         pull.kill();
-        const push = exec('git push', (err, stdout, stderr) => {
-          console.log('git push');
-          if (err) {
-            console.log(color.red('Err:', err));
-            return;
-          }
-          if (stderr) {
-            console.log(color.yellow('stderr:', stderr));
-          }
-          console.log(stdout);
-          push.kill();
-        });
       });
     });
   });
