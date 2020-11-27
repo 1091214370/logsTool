@@ -49,7 +49,7 @@ function commit(msg) {
     return;
   }
   const add = exec('git add *', (err, stdout, stderr) => {
-    console.log('git add *');
+    console.log('git add .');
     if (err) {
       console.log(color.red('Err:', err));
       return;
