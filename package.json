@@ -1,6 +1,6 @@
 {
   "name": "cwr",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "create weekly reports周报生成工具（git），git 命令快捷工具",
   "main": "index.js",
   "bin": {
